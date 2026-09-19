@@ -1,0 +1,12 @@
+LTspice 26.0.1 for Windows
+Circuit: C:\Users\loker\Projects\DAP_PCB\Electrical\Charger Sims\Draft1.net
+Start Time: Sat Sep 19 11:57:05 2026
+C:\Users\loker\Projects\DAP_PCB\Electrical\Charger Sims\Draft1.net(3): This sub-circuit name is not defined.
+X§X1 SYS 0 GRM32ER71E226KE15_DC4V33_25degC ;§pnba A)B
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\loker\Projects\DAP_PCB\Electrical\Charger Sims\Draft1.net(4): This sub-circuit name is not defined.
+X§X2 SYS 0 GRM32ER71E226KE15_DC4V33_25degC ;§pnba A)B
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\loker\Projects\DAP_PCB\Electrical\Charger Sims\Draft1.net(5): This sub-circuit name is not defined.
+X§X3 SYS 0 GRM32ER71E226KE15_DC4V33_25degC ;§pnba A)B
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

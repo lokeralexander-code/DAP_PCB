@@ -1,0 +1,23 @@
+LTspice 26.0.1 for Windows
+Circuit: C:\Users\loker\Projects\DAP_PCB\Electrical\Charger Sims\USB-filter.net
+Start Time: Fri Sep 18 17:25:10 2026
+
+.step n=1
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+
+.step n=2
+Direct Newton iteration succeeded in finding operating point.
+
+.step n=3
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.191 seconds.
+
+Files loaded:
+C:\Users\loker\Projects\DAP_PCB\Electrical\Charger Sims\USB-filter.net
+C:\Users\loker\Projects\DAP_PCB\Electrical\Charger Sims\GCM188R71H104KA57_DC5V_25degC.mod
+
