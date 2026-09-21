@@ -1,13 +1,13 @@
 LTspice 26.0.1 for Windows
 Circuit: C:\Users\loker\Projects\DAP_PCB\Electrical\Charger Sims\SYS-output.net
-Start Time: Sat Sep 19 12:24:06 2026
+Start Time: Mon Sep 21 14:59:12 2026
 solver = Normal
 Maximum thread count: 16
 tnom = 27
 temp = 27
 method = trap
 Direct Newton iteration succeeded in finding operating point.
-Total elapsed time: 1.540 seconds.
+Total elapsed time: 3.224 seconds.
 
 Files loaded:
 C:\Users\loker\Projects\DAP_PCB\Electrical\Charger Sims\SYS-output.net

@@ -1,6 +1,6 @@
 LTspice 26.0.1 for Windows
 Circuit: C:\Users\loker\Projects\DAP_PCB\Electrical\Charger Sims\USB-filter.net
-Start Time: Fri Sep 18 17:25:10 2026
+Start Time: Mon Sep 21 13:50:51 2026
 
 .step n=1
 solver = Normal
@@ -15,7 +15,7 @@ Direct Newton iteration succeeded in finding operating point.
 
 .step n=3
 Direct Newton iteration succeeded in finding operating point.
-Total elapsed time: 0.191 seconds.
+Total elapsed time: 0.183 seconds.
 
 Files loaded:
 C:\Users\loker\Projects\DAP_PCB\Electrical\Charger Sims\USB-filter.net

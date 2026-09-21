@@ -1,0 +1,22 @@
+LTspice 26.0.1 for Windows
+Circuit: C:\Users\loker\Projects\DAP_PCB\Electrical\Buck Boost Sims\Buck-Boost.net
+Start Time: Mon Sep 21 15:32:37 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping succeeded in finding the operating point.
+
+Changing Tseed to 1.95312e-09
+Changing Tseed to 1.95312e-11
+
+Simulation stopped by user.
+Total elapsed time: 17.185 seconds.
+
+Files loaded:
+C:\Users\loker\Projects\DAP_PCB\Electrical\Buck Boost Sims\Buck-Boost.net
+C:\Users\loker\AppData\Local\LTspice\lib\sub\LTC3440.sub
+

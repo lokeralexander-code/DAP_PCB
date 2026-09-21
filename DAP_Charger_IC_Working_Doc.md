@@ -1,7 +1,7 @@
 # Charger IC — Working Document
 
 **Project:** Digital Audio Player
-**Rev:** 0
+**Rev:** 1
 **Status:** Issued for review
 
 **Author:** Alexander Loker — design decisions, component selection, analysis and verification.
@@ -58,31 +58,33 @@ source data and datasheet extracts.
 
 | Pin | Name | Connection | Notes |
 |---|---|---|---|
-| 1 | CE | | |
-| 2 | EN1 | | |
-| 3 | EN2 | | |
-| 4 | AGND | | |
-| 5 | SDA | | |
-| 6 | SCL | | |
-| 7 | STAT | | |
-| 8 | INT | | |
-| 9 | TS | | |
-| 10 | ISET | | |
-| 11 | BAT | | |
-| 12 | BAT-1 | | |
-| 13 | SYS | | |
-| 14 | SYS-1 | | |
-| 15 | PGND | | |
-| 16 | PGND-1 | | |
-| 17 | SW | | |
-| 18 | SW-1 | | |
-| 19 | IN | | |
-| 20 | PMID | | |
-| 21 | BOOT | | |
-| 22 | ILIM | | |
-| 23 | VDPM | | |
-| 24 | LDO | | |
-| 25 | THERMALPAD | | |
+| 1 | CE | CE_BQ — 10 kΩ pull-up to +3V3 | Active low. Pull-up means charging is disabled by default. See open item 3 |
+| 2 | EN1 | EN1_BQ — 10 kΩ pull-up to +3V3 | EN2=0, EN1=1 selects external ILIM mode, which also enables the external VDPM divider |
+| 3 | EN2 | EN2_BQ — 10 kΩ pull-down to GND | |
+| 4 | AGND | Ground, tied with PGND and thermal pad | |
+| 5 | SDA | SDA_BQ — 10 kΩ pull-up to +3V3 | |
+| 6 | SCL | SCL_BQ — 10 kΩ pull-up to +3V3 | |
+| 7 | STAT | STAT_BQ | Open drain. No pull-up on schematic. See open item 2 |
+| 8 | INT | INT_BQ — 10 kΩ pull-up to +3V3 | Open drain |
+| 9 | TS | TS node — R2 (5 kΩ) from LDO_BQ, R3 (9.88 kΩ) to AGND, NTC via J pin 2 | |
+| 10 | ISET | ISET_BQ — RISET to AGND | See open item 1 |
+| 11 | BAT | BAT+ — CBAT 1 µF, J pin 1 | |
+| 12 | BAT-1 | BAT+ | Paralleled with pin 11 |
+| 13 | SYS | SYS rail — CSYS bank (2 × 22 µF + 0.1 µF) | |
+| 14 | SYS-1 | SYS rail | Paralleled with pin 13 |
+| 15 | PGND | GND | |
+| 16 | PGND-1 | GND | Paralleled with pin 15 |
+| 17 | SW | SW_BQ — inductor, CBOOT | |
+| 18 | SW-1 | SW_BQ | Paralleled with pin 17 |
+| 19 | IN | VIN_BQ / VUSB — CIN 2.2 µF, VDPM divider top | Fed from the input filter output |
+| 20 | PMID | PMID_BQ — CPMID 1 µF to GND | |
+| 21 | BOOT | BOOT_BQ — CBOOT 33 nF to SW | |
+| 22 | ILIM | ILIM_BQ — RILIM 270 Ω to AGND | |
+| 23 | VDPM | VDPM_BQ — divider centre tap | |
+| 24 | LDO | LDO_BQ — CLDO 1 µF, top of TS network | 4.9 V, only present while IN is powered |
+| 25 | THERMALPAD | Ground | Via field to inner plane |
+
+Source: schematic BQ-CHARGER-V1.
 
 ---
 
@@ -107,12 +109,13 @@ source data and datasheet extracts.
 | #1-049 | D1 | TVS diode, VBUS transient protection | 7 V standoff, 7.78 V breakdown, 12 V clamp, 33.3 A Ipp, unidirectional | SMA (DIOM5226X230N) | Diodes Incorporated | SMAJ7.0A-13-F | SMAJ7.0A-FDICT-ND | 12 wk | Place at the connector, ahead of the filter. Existing library part (aRTy project) |
 | #1-073 | CSYS1, CSYS2 | Bulk capacitance at SYS | 22 µF, 25 V, X7S, ±10% | 1210 (3225 metric) | Murata | GCM32EC71E226KE36L | 490-GCM32EC71E226KE36LCT-ND | 21 wk | Qty 2. Footprint CAPC3225X270N |
 | #1-048 | CSYS3 | High-frequency bypass at SYS | 0.1 µF, 50 V, X7R, ±10% | 0402 (1005 metric) | Murata | GRM155R71H104KE14D | 490-10700-1-ND | 17 wk | Low ESL, place closest to the pin. Existing library part (aRTy project) |
-| | R_DPM1 | VDPM divider, upper | 274 kΩ, 1%, generic | 0402 | | | | | Sets VIN_DPM = 4.488 V with R_DPM2 |
-| | R_DPM2 | VDPM divider, lower | 100 kΩ, 1%, generic | 0402 | | | | | |
+| | R_DPM1 | VDPM divider, upper | 274 kΩ, 1%, generic | 0603 | | | | | Sets VIN_DPM = 4.488 V with R_DPM2. Schematic currently shows 270 kΩ — see open item 4 |
+| | R_DPM2 | VDPM divider, lower | 100 kΩ, 1%, generic | 0603 | | | | | |
 | | R_NTC | NTC thermistor, mounted on cell body | 10 kΩ at 25 °C, β = 4000 K | | | | | | Per the datasheet worked example that R2/R3 are sized for |
-| | — | Pull-up (STAT, INT, SCL, SDA) | 10 kΩ | | | | | | Datasheet specifies 10 kΩ |
-| | — | Pull-up, generic | 1 kΩ | | | | | | |
-| | D | Status LED | Green | | | | | | Driven from STAT, open drain |
+| | — | Pull-ups: SCL, SDA, INT, CE, EN1 | 10 kΩ, generic | 0603 | | | | | Qty 5, to +3V3 |
+| | — | Pull-down: EN2 | 10 kΩ, generic | 0603 | | | | | Qty 1, to GND |
+| | R_CC1, R_CC2 | USB-C CC1 / CC2 sink pull-downs | 5.1 kΩ, generic | 0402 | | | | | Qty 2, one per CC line. Advertises the device as a sink |
+| | — | STAT pull-up and status LED | | | | | | | Listed previously as 1 kΩ + green LED; not on schematic. See open item 2 |
 
 ---
 
@@ -451,7 +454,15 @@ Guidelines items 2 and 4
 
 | # | Item | Blocking? | Resolved |
 |---|---|---|---|
-| 1 | Battery connector #1-062 is a 5.08 mm through-hole terminal block; check the envelope against the ~13.2 mm enclosure target | No | |
+| 1 | **RISET shows 50 Ω on the schematic.** The library Value field error on #1-064 has propagated. 50 Ω sits inside the ISET short-circuit detection band (45–75 Ω), so the IC would flag a fault and suspend charging; if undetected it would program 5 A, above the 2 A maximum. Correct to 500 Ω in the library so the BOM is generated correctly | Yes | |
+| 2 | STAT is open drain with no pull-up on the schematic, so it floats. The previously listed 1 kΩ pull-up and green LED are not present. Add a pull-up at minimum | Yes | |
+| 3 | CE is pulled up, so charging is disabled until firmware drives it low. PowerPath keeps SYS alive from USB, so the MCU can boot and enable charging — but this defeats the standalone fallback that RISET was sized for: if firmware hangs with CE high, the device never charges. The pull-ups also sit on +3V3, which only exists once SYS and the downstream buck-boost are up, so CE reads low at plug-in, then goes high when +3V3 arrives. Decide whether this is intended | Yes | |
+| 4 | VDPM upper resistor is 270 kΩ on the schematic against 274 kΩ in Section 5.5. 270 kΩ gives VIN_DPM = 4.44 V, which still clears the 4.35 V floor (90 mV margin versus 138 mV). Reconcile the two | No | |
+| 5 | USB-C DP1, DP2, DN1, DN2 appear unconnected. These are required for USB MSC file transfer, and DP1/DP2 and DN1/DN2 must be tied together for orientation independence. Confirm they route to the MCU sheet | Yes | |
+| 6 | Ground symbols AGND and GND are both used. Confirm they are one net, or a deliberate single-point tie, consistent with the project's single uninterrupted ground plane rule | No | |
+| 7 | The datasheet states the I2C circuitry is powered from IN when a supply is connected. Firmware may only be able to communicate with the charger while USB is present. Verify before writing the driver | No | |
+| 8 | NTC return and battery return current share J pin 3. At 500 mA through ~10 mΩ of contact and trace resistance, the error is ~5 mV against ~49 mV per 1% of the TS threshold scale — small, but Kelvin-connect the NTC return if convenient | No | |
+| 9 | Battery connector #1-062 is a 5.08 mm through-hole terminal block; check the envelope against the ~13.2 mm enclosure target | No | |
 
 ---
 
@@ -460,3 +471,4 @@ Guidelines items 2 and 4
 | Rev | Date | Change |
 |---|---|---|
 | 0 | 2026-09-19 | Initial issue. Part selection, external component sizing, RISET/RILIM/VIN_DPM calculations, TS network, USB-C input filter and SYS output ripple simulations. |
+| 1 | 2026-09-19 | Reviewed against schematic BQ-CHARGER-V1. Pin connections recorded. Pull-up/pull-down network, CC pull-downs and packages reconciled. Schematic review findings added as open items 1–8. |
