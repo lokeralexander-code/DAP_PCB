@@ -1,0 +1,11 @@
+# LTspice generated files
+*.raw
+*.log
+*.net
+*.fft
+
+# Altium generated files
+History/
+Project Logs for */
+Project Outputs for */
+__Previews/
