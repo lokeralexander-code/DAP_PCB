@@ -1,2 +1,4 @@
-Record=TopLevelDocument|FileName=DAP-Digital_Audio_Converter-1.SchDoc|SheetNumber=1
-Record=NoMainPathDocument|SourceDocument=DAP-Digital_Audio_Converter-1.SchDoc|FileName=DAP-Power-2.SchDoc|SheetNumber=2
+Record=TopLevelDocument|FileName=DAP-Audio-1.SchDoc|SheetNumber=1
+Record=NoMainPathDocument|SourceDocument=DAP-Audio-1.SchDoc|FileName=DAP-MCU-3.SchDoc|SheetNumber=3
+Record=NoMainPathDocument|SourceDocument=DAP-Audio-1.SchDoc|FileName=DAP-Peripherals.SchDoc|SheetNumber=4
+Record=NoMainPathDocument|SourceDocument=DAP-Audio-1.SchDoc|FileName=DAP-Power-2.SchDoc|SheetNumber=2
