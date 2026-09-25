@@ -50,13 +50,13 @@ PrefsVaultGUID=
 PrefsRevisionGUID=
 
 [Document1]
-DocumentPath=..\..\..\Altium-Libraries\DAP-Audio-1.SchDoc
+DocumentPath=DAP-Audio-1.SchDoc
 AnnotationEnabled=1
-AnnotateStartValue=100
-AnnotationIndexControlEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=0
+AnnotateOrder=-1
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -64,7 +64,7 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=XXWANEGX
+DocumentUniqueId=QGQEUPCU
 
 [Document2]
 DocumentPath=..\..\..\Altium-Libraries\aloker-Footprints.PcbLib
