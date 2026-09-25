@@ -1,0 +1,85 @@
+(ExpressProject "Project2"
+  (ProjectVersion "19981106")
+  (SoftwareVersion "23.1-2024 S001-[09/24/26]")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (Allegro Netlist Directory "allegro")
+    (DOCKED "TRUE")
+    (DOCKING_POSITION "59420")
+    (NoModify)
+    (File ".\project2.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE"))
+  (Folder "Layout")
+  (Folder "Outputs"
+    (File ".\project2-pspicefiles\schematic1\schematic1.net"
+      (Type "Report")))
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (ActiveProfile ".\project2-pspicefiles\schematic1\ac_analysis.sim")
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\project2-pspicefiles\schematic1\ac_analysis.sim"
+        (DisplayName "SCHEMATIC1-AC_ANALYSIS")
+        (Type "PSpice Profile")))
+    (Folder "Model Libraries"
+      (Sort User))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (Folder "Logs")
+  (MPSSessionName "loker")
+  (PartMRUSelector
+    (0
+      (LibraryName
+         "C:\CADENCE\PSPICETI\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (VDC
+      (FullPartName "VDC.Normal")
+      (LibraryName
+         "C:\CADENCE\PSPICETI\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (VAC
+      (FullPartName "VAC.Normal")
+      (LibraryName
+         "C:\CADENCE\PSPICETI\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0")))
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources"
+         "C:\Users\loker\Projects\DAP_PCB\Electrical\Op-Amp_Sims\project2.dsn")
+      (Path "Design Resources"
+         "C:\Users\loker\Projects\DAP_PCB\Electrical\Op-Amp_Sims\project2.dsn"
+         "SCHEMATIC1")
+      (Path "Outputs")
+      (Select "Outputs"
+         "C:\Users\loker\Projects\DAP_PCB\Electrical\Op-Amp_Sims\project2-pspicefiles\schematic1\schematic1.net"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 449"))
+      (Tab 0))
+    (Doc
+      (Type "TextFile")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 5 628 24 467"))
+      (Path
+         "C:\Users\loker\Projects\DAP_PCB\Electrical\Op-Amp_Sims\project2-pspicefiles\schematic1\schematic1.net")
+      (Scroll "0"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 5 24 5 628 24 467")
+        (Scroll "0 0")
+        (Zoom "112")
+        (Occurrence "/"))
+      (Path
+         "C:\USERS\LOKER\PROJECTS\DAP_PCB\ELECTRICAL\OP-AMP_SIMS\PROJECT2.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1"))))

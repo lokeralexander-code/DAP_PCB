@@ -1,0 +1,56 @@
+
+**** 09/24/26 16:11:50 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC_ANALYSIS"  [ C:\Users\loker\Projects\DAP_PCB\Electrical\Op-Amp_Sims\Project2-PSpiceFiles\SCHEMATIC1\AC_AN
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "AC_ANALYSIS.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\cds_spb_home\cdssetup\OrCAD_PSpiceTIPSpice_Install\23.1.0\PSpice.ini file:
+.lib "nom_pspti.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.AC DEC 100 10 10M
+---------------$
+ERROR(ORPSIM-16103): Invalid value
+.OPTIONS ADVCONV
+.OPTIONS FILEMODELSEARCH
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source PROJECT2
+X_U1         N00497 N00331 N00293 N00247 N00346 OPA1612-Q1
+C_C1         0 N00320  13n  TC=0,0 
+C_C2         N00331 N00346  2.7n  TC=0,0 
+R_R2         N00320 N00331  681 TC=0,0 
+R_R1         N00320 N00346  220 TC=0,0 
+R_R3         N00406 N00320  499 TC=0,0 
+R_R4         N00575 N00497  681 TC=0,0 
+C_C3         0 N00497  2.7n  TC=0,0 
+R_R5         0 N00575  220 TC=0,0 
+C_C4         0 N00575  13n  TC=0,0 
+R_R6         N01143 N00575  499 TC=0,0 
+V_V1         N00406 0 DC 0Vdc AC 0.5 
+V_V2         N00293 0 3.3V
+V_V3         N00247 0 -3.3V
+V_V5         N01143 0 DC 0Vdc AC 0.5 180
+
+**** RESUMING AC_ANALYSIS.cir ****
+.END
+

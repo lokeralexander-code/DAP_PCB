@@ -1,0 +1,315 @@
+
+**** 09/24/26 16:12:34 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC_ANALYSIS"  [ C:\Users\loker\Projects\DAP_PCB\Electrical\Op-Amp_Sims\Project2-PSpiceFiles\SCHEMATIC1\AC_AN
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "AC_ANALYSIS.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\cds_spb_home\cdssetup\OrCAD_PSpiceTIPSpice_Install\23.1.0\PSpice.ini file:
+.lib "nom_pspti.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.AC DEC 100 10 10Meg
+.OPTIONS ADVCONV
+.OPTIONS FILEMODELSEARCH
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source PROJECT2
+X_U1         N00497 N00331 N00293 N00247 N00346 OPA1612-Q1
+C_C1         0 N00320  13n  TC=0,0 
+C_C2         N00331 N00346  2.7n  TC=0,0 
+R_R2         N00320 N00331  681 TC=0,0 
+R_R1         N00320 N00346  220 TC=0,0 
+R_R3         N00406 N00320  499 TC=0,0 
+R_R4         N00575 N00497  681 TC=0,0 
+C_C3         0 N00497  2.7n  TC=0,0 
+R_R5         0 N00575  220 TC=0,0 
+C_C4         0 N00575  13n  TC=0,0 
+R_R6         N01143 N00575  499 TC=0,0 
+V_V1         N00406 0 DC 0Vdc AC 0.5 
+V_V2         N00293 0 3.3V
+V_V3         N00247 0 -3.3V
+V_V5         N01143 0 DC 0Vdc AC 0.5 180
+
+**** RESUMING AC_ANALYSIS.cir ****
+.END
+
+
+INFO(ORPSIM-15423): Unable to find index file nom.ind for library file nom.lib.
+
+INFO(ORPSIM-15422): Making new index file nom.ind for library file nom.lib.
+
+Index has 1955 entries from 6 file(s).
+
+INFO(ORPSIM-16573): AC analysis does not support expression evaluation at each frequency. ABM devices with non-linear operations will be evaluated only at bias point.
+
+**** 09/24/26 16:12:34 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC_ANALYSIS"  [ C:\Users\loker\Projects\DAP_PCB\Electrical\Op-Amp_Sims\Project2-PSpiceFiles\SCHEMATIC1\AC_AN
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.X_U1.DVN   X_U1.X_U36.DVNF X_U1.X_U37.DVNF 
+          IS  100.000000E-18  100.000000E-18  100.000000E-18 
+          KF    3.162278E-12    3.162278E-12    3.162278E-12 
+
+
+**** 09/24/26 16:12:34 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC_ANALYSIS"  [ C:\Users\loker\Projects\DAP_PCB\Electrical\Op-Amp_Sims\Project2-PSpiceFiles\SCHEMATIC1\AC_AN
+
+
+ ****     Resistor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+**** 09/24/26 16:12:34 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC_ANALYSIS"  [ C:\Users\loker\Projects\DAP_PCB\Electrical\Op-Amp_Sims\Project2-PSpiceFiles\SCHEMATIC1\AC_AN
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.X_S1._S1   X_U1.X_S2._S2   
+         RON     .01             .01         
+        ROFF    1.000000E+12    1.000000E+12 
+         VON     .01             .01         
+        VOFF    0               0            
+
+
+               X_U1.X_U20.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .7          
+        VOFF    0            
+
+
+               X_U1.X_U21.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .1          
+
+
+               X_U1.X_U25.OL_SW 
+         RON    1.000000E-03 
+        ROFF    1.000000E+12 
+         VON     .9          
+        VOFF     .8          
+
+
+               X_U1.X_U5.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .1          
+
+
+**** 09/24/26 16:12:34 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC_ANALYSIS"  [ C:\Users\loker\Projects\DAP_PCB\Electrical\Op-Amp_Sims\Project2-PSpiceFiles\SCHEMATIC1\AC_AN
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00247)   -3.3000 (N00293)    3.3000 (N00320) 71.71E-06 (N00331) 47.87E-06     
+
+(N00346) 111.0E-06 (N00406)    0.0000 (N00497)-50.02E-06 (N00575)-9.161E-06     
+
+(N01143)    0.0000 (X_U1.MID)-679.3E-24                  (X_U1.V11)-13.79E-09   
+
+(X_U1.V12)-13.71E-09                  (X_U1.ESDN) 47.87E-06                     
+
+(X_U1.ESDP)-50.02E-06                 (X_U1.VCLP) 153.0E-06                     
+
+(X_U1.CLAMP) 153.1E-06                (X_U1.VCC_B)    3.3000                    
+
+(X_U1.VEE_B)   -3.3000                (X_U1.VIMON) 178.7E-06                    
+
+(X_U1.N24207)-50.02E-06               (X_U1.N24458)-8.136E-09                   
+
+(X_U1.N24659)-57.90E-12               (X_U1.N25248)-57.90E-12                   
+
+(X_U1.N25397) 47.27E-06               (X_U1.N25415) 47.27E-06                   
+
+(X_U1.N25921)    -.3819               (X_U1.N25929)-303.1E-09                   
+
+(X_U1.N27785)     .4024               (X_U1.N27793) 298.1E-09                   
+
+(X_U1.N28438) 47.27E-06               (X_U1.N28678) 47.87E-06                   
+
+(X_U1.N31303) 47.87E-06               (X_U1.N31389)    1.3000                   
+
+(X_U1.N31737)   -1.3000               (X_U1.N32236) 47.87E-06                   
+
+(X_U1.N32347) 47.87E-06               (X_U1.N32510) 43.40E-09                   
+
+(X_U1.N34005)     .0033               (X_U1.N34013) 153.1E-06                   
+
+(X_U1.N36262) 153.0E-06               (X_U1.N37029)     .0037                   
+
+(X_U1.N37037) 13.82E-06               (X_U1.N39124)     .0037                   
+
+(X_U1.N39417)     .0037               (X_U1.N39473)     .0037                   
+
+(X_U1.N39884)     .0037               (X_U1.N39892) 3.464E-06                   
+
+(X_U1.N45999) 111.0E-06               (X_U1.N46041)     .0037                   
+
+(X_U1.N55560)-679.3E-24               (X_U1.N56849)-679.3E-24                   
+
+(X_U1.N57321)-679.3E-24               (X_U1.N57325)-679.3E-24                   
+
+(X_U1.N59739)   49.8000               (X_U1.N59743)-679.3E-24                   
+
+(X_U1.N59747)-679.3E-24               (X_U1.N59865)-679.3E-24                   
+
+(X_U1.N59881)-679.3E-24               (X_U1.N59905)  -47.0000                   
+
+(X_U1.N65567)   48.0000               (X_U1.N65575)-679.3E-24                   
+
+(X_U1.N65579)-679.3E-24               (X_U1.N65697)-679.3E-24                   
+
+(X_U1.N65713)-679.3E-24               (X_U1.N65737)  -47.0000                   
+
+(X_U1.N68774) 153.1E-06               (X_U1.N72064)    3.0867                   
+
+(X_U1.N72073)   -3.0865               (X_U1.N72391)   -3.0865                   
+
+(X_U1.N72398)    3.0867               (X_U1.N81574)-13.79E-09                   
+
+(X_U1.N81664)-13.71E-09               (X_U1.N81756)-679.3E-24                   
+
+(X_U1.VOUT_S) 111.0E-06               (X_U1.VSENSE) 153.1E-06                   
+
+(X_U1.X_U1.3)    0.0000               (X_U1.X_U1.4)    0.0000                   
+
+(X_U1.X_U1.5)    0.0000               (X_U1.X_U1.6)    0.0000                   
+
+(X_U1.X_U1.7)     .8338               (X_U1.X_U1.8)     .8338                   
+
+(X_U1.N158495) 153.0E-06              (X_U1.N161737) 178.7E-06                  
+
+(X_U1.N161937) 111.0E-06              (X_U1.VCC_CLP)    3.0867                  
+
+(X_U1.VEE_CLP)   -3.0865              (X_U1.X_U36.3)    0.0000                  
+
+(X_U1.X_U36.4)    0.0000              (X_U1.X_U36.5)    0.0000                  
+
+(X_U1.X_U36.6)    0.0000              (X_U1.X_U36.7)     .8338                  
+
+(X_U1.X_U36.8)     .8338              (X_U1.X_U37.3)    0.0000                  
+
+(X_U1.X_U37.4)    0.0000              (X_U1.X_U37.5)    0.0000                  
+
+(X_U1.X_U37.6)    0.0000              (X_U1.X_U37.7)     .8338                  
+
+(X_U1.X_U37.8)     .8338              (X_U1.CL_CLAMP) 153.0E-06                 
+
+(X_U1.N1356061)  -13.7590             (X_U1.N1356115)   13.6800                 
+
+(X_U1.N1356333)  -13.7590             (X_U1.N1356345)  -13.7590                 
+
+(X_U1.N1356409)   13.6800             (X_U1.N1356429)   13.6800                 
+
+(X_U1.N2392113)-679.3E-24             (X_U1.N2392253)    3.3000                 
+
+(X_U1.N2392293)   -3.3000             (X_U1.N2402147)-57.90E-12                 
+
+(X_U1.N2402155)-412.1E-15             (X_U1.N2419074) 153.1E-06                 
+
+(X_U1.N2423000)     .0033             (X_U1.CLAW_CLAMP) 153.0E-06               
+
+(X_U1.SW_OL_OPA1612-Q1)-679.3E-24     
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.437E-07
+    V_V2        -3.600E-03
+    V_V3         3.600E-03
+    V_V5        -1.836E-08
+    X_U1.V_VCM_MAX  -1.146E-12
+    X_U1.V_VCM_MIN   1.300E-12
+    X_U1.V_V_GRN   4.700E-11
+    X_U1.V_V_GRP  -4.800E-11
+    X_U1.V_V_ISCN   4.700E-11
+    X_U1.V_V_ISCP  -4.980E-11
+    X_U1.V_V_ORN   0.000E+00
+    X_U1.V_V_ORP   0.000E+00
+    X_U1.X_H1.VH_H1   1.787E-07
+    X_U1.X_H2.VH_H2  -1.371E-08
+    X_U1.X_H3.VH_H3   1.379E-08
+
+    TOTAL POWER DISSIPATION   2.38E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 09/24/26 16:12:34 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC_ANALYSIS"  [ C:\Users\loker\Projects\DAP_PCB\Electrical\Op-Amp_Sims\Project2-PSpiceFiles\SCHEMATIC1\AC_AN
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =        2.28
+
