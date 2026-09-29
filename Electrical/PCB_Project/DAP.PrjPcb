@@ -152,7 +152,7 @@ GenerateClassCluster=0
 DocumentUniqueId=VAQRXNLX
 
 [Document7]
-DocumentPath=DAP-Peripherals.SchDoc
+DocumentPath=DAP-Peripherals-4.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
