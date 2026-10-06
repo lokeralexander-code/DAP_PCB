@@ -185,6 +185,10 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=JMALIXBL
 
+[GeneratedDocument1]
+DocumentPath=Project Outputs for DAP\Design Rule Check - DAP-PCB.html
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Sources
 ParameterCount=0
